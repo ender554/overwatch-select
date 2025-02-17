@@ -1,0 +1,114 @@
+/* Ensure the entire app fills the viewport */
+.App {
+  font-family: sans-serif;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Header remains at the top with fixed height */
+.app-header {
+  text-align: center;
+  padding: 1rem 0;
+  flex-shrink: 0;
+  /* Alternatively, if you want it fixed: 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 10;
+  */
+}
+
+/* The container for the rest of the app, filling the remaining space */
+.app-container {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  /* If header is fixed, add margin-top equal to header height */
+  /* margin-top: 4rem; */
+}
+
+/* Left sidebar remains the same */
+.hero-select-container {
+  flex: 0 0 250px;
+  border-right: 1px solid #ccc;
+  padding-right: 1rem;
+}
+
+/* Controls for map and role selection */
+.controls {
+  margin-bottom: 1rem;
+}
+
+.controls select {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+/* Right area for results - enable scrolling if content overflows */
+.results-container {
+  flex: 1;
+  padding-left: 1rem;
+  overflow-y: auto;
+  /* Optional: set a min-height so that even with little content it appears consistent */
+  min-height: 600px;
+}
+
+.hero-match {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+/* Hero selection list styling */
+.hero-select-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-select-item {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.hero-thumb {
+  width: 4rem;
+  height: 4rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+
+.hero-select-item.selected .hero-thumb {
+  border-color: green;
+}
+
+.hero-fallback {
+  background-color: #444;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}

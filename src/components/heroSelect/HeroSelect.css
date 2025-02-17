@@ -1,0 +1,38 @@
+.hero-select-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-select-item {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.hero-thumb {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  display: block;
+}
+
+.hero-select-item.selected .hero-thumb {
+  border-color: green;
+}
+
+.hero-fallback {
+  background-color: #444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  text-shadow: 0 0 2px #000;
+}
