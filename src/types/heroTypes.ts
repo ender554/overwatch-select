@@ -10,7 +10,8 @@ import {
 } from "../data/mapProperties";
 
 export interface PropertyCategory<T extends string> {
-  options: Partial<Record<T, number>>;
+  options: Record<T, number>;
+
   weight: number;
 }
 
@@ -24,10 +25,10 @@ export interface PreferredProperties {
   mode: PropertyCategory<Mode>;
   size: PropertyCategory<Size>;
   layout: PropertyCategory<Layout>;
-  sightlines?: PropertyCategory<Sightline>;
-  verticality?: PropertyCategory<Verticality>;
-  cover?: PropertyCategory<Cover>;
-  environmentalHazards?: PropertyCategory<EnvironmentalHazards>;
+  sightlines: PropertyCategory<Sightline>;
+  verticality: PropertyCategory<Verticality>;
+  cover: PropertyCategory<Cover>;
+  environmentalHazards: PropertyCategory<EnvironmentalHazards>;
 }
 
 export interface Hero {
