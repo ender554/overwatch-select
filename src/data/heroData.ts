@@ -7,14 +7,14 @@ const DVa: Hero = {
   preferredProperties: {
     mode: {
       options: {
-        [MapProperties.MODE.CONTROL]: 0.75,
-        [MapProperties.MODE.ESCORT]: 1.0,
-        [MapProperties.MODE.HYBRID]: 0.75,
-        [MapProperties.MODE.PUSH]: 1.0,
+        [MapProperties.MODE.CONTROL]: 1.0,
+        [MapProperties.MODE.ESCORT]: 0.75,
+        [MapProperties.MODE.HYBRID]: 1.0,
+        [MapProperties.MODE.PUSH]: 0.75,
         [MapProperties.MODE.CLASH]: 0.5,
         [MapProperties.MODE.FLASHPOINT]: 0.5,
       },
-      weight: 1, // ✅ Auto-balanced
+      weight: 0.95, // ✅ Auto-balanced
     },
     size: {
       options: {
@@ -22,16 +22,16 @@ const DVa: Hero = {
         [MapProperties.SIZE.MEDIUM]: 0.75,
         [MapProperties.SIZE.LARGE]: 0.25,
       },
-      weight: 0.93, // ✅ Auto-balanced
+      weight: 1.45, // ✅ Auto-balanced
     },
     layout: {
       options: {
         [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0,
         [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.75,
         [MapProperties.LAYOUT.OPEN]: 0.25,
-        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 0.5,
+        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0,
       },
-      weight: 1.6, // ✅ Auto-balanced
+      weight: 1.35, // ✅ Auto-balanced
     },
     sightlines: {
       options: {
@@ -47,22 +47,22 @@ const DVa: Hero = {
         [MapProperties.VERTICALITY.MEDIUM]: 0.75,
         [MapProperties.VERTICALITY.LOW]: 0.5,
       },
-      weight: 1.32, // ✅ Auto-balanced
+      weight: 1.1, // ✅ Auto-balanced
     },
     cover: {
       options: {
-        [MapProperties.COVER.HIGH]: 1.0,
+        [MapProperties.COVER.HIGH]: 0.25,
         [MapProperties.COVER.MODERATE]: 0.75,
-        [MapProperties.COVER.MINIMAL]: 0.25,
+        [MapProperties.COVER.MINIMAL]: 1.0,
       },
-      weight: 0.75, // ✅ Auto-balanced
+      weight: 0.72, // ✅ Auto-balanced
     },
     environmentalHazards: {
       options: {
         [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
-        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.5,
+        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.75,
       },
-      weight: 0.47, // ✅ Auto-balanced
+      weight: 0.35, // ✅ Auto-balanced
     },
   },
 };
