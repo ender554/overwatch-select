@@ -210,65 +210,66 @@ const Ramattra: Hero = {
   preferredProperties: {
     mode: {
       options: {
-        [MapProperties.MODE.CONTROL]: 1.0, // Can hold objectives well in Nemesis Form
-        [MapProperties.MODE.ESCORT]: 0.75, // Can work but struggles with long-range poke
-        [MapProperties.MODE.HYBRID]: 1.0, // Balanced engagements allow both poke & brawl playstyles
-        [MapProperties.MODE.PUSH]: 0.75, // Decent, but needs proper support
-        [MapProperties.MODE.CLASH]: 1.0, // Strong due to hybrid playstyle
-        [MapProperties.MODE.FLASHPOINT]: 0.5, // Chaotic fights may leave him exposed
+        [MapProperties.MODE.CONTROL]: 0.75,
+        [MapProperties.MODE.ESCORT]: 1.0,
+        [MapProperties.MODE.HYBRID]: 0.875, // Average of Control & Escort
+        [MapProperties.MODE.PUSH]: 0.75,
+        [MapProperties.MODE.CLASH]: 1.0,
+        [MapProperties.MODE.FLASHPOINT]: 0.75,
       },
-      weight: 1.23, // ✅ Auto-balanced
+      weight: 0.9,  // Low-moderate importance
     },
     size: {
       options: {
-        [MapProperties.SIZE.SMALL]: 0.5, // Can feel too constrained
-        [MapProperties.SIZE.MEDIUM]: 1.0, // Best for switching between poke & brawl
-        [MapProperties.SIZE.LARGE]: 1.0, // Works if he can control fights effectively
+        [MapProperties.SIZE.SMALL]: 0.75,
+        [MapProperties.SIZE.MEDIUM]: 1.0,
+        [MapProperties.SIZE.LARGE]: 0.75,
       },
-      weight: 1.05, // ✅ Auto-balanced
+      weight: 1.1,  // Medium-sized maps suit him best
     },
     layout: {
       options: {
-        [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0, // Can use barriers & Nemesis Form to hold chokes
-        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.5, // Lacks high mobility to benefit from flanks
-        [MapProperties.LAYOUT.OPEN]: 1.0, // Can poke effectively from range
-        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 0.75, // Can contest, but lacks mobility
+        [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0,
+        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.75,
+        [MapProperties.LAYOUT.OPEN]: 0.75,
+        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 0.5,
       },
-      weight: 1.31, // ✅ Auto-balanced
+      weight: 1.3,  // Controlling chokes is vital for him
     },
     sightlines: {
       options: {
-        [MapProperties.SIGHTLINES.SHORT]: 0.75, // Can brawl well in Nemesis Form
-        [MapProperties.SIGHTLINES.MEDIUM]: 1.0, // Ideal for poke and brawl transitions
-        [MapProperties.SIGHTLINES.LONG]: 0.5, // Struggles against extreme poke
+        [MapProperties.SIGHTLINES.SHORT]: 0.75,
+        [MapProperties.SIGHTLINES.MEDIUM]: 1.0,
+        [MapProperties.SIGHTLINES.LONG]: 0.75,
       },
-      weight: 1.14, // ✅ Auto-balanced
+      weight: 1.2,  // Mid-range is ideal
     },
     verticality: {
       options: {
-        [MapProperties.VERTICALITY.HIGH]: 0.5, // Struggles to access high ground
-        [MapProperties.VERTICALITY.MEDIUM]: 1.0, // Can contest, but needs to control space
-        [MapProperties.VERTICALITY.LOW]: 0.75, // Works well on flat maps with strong positioning
+        [MapProperties.VERTICALITY.HIGH]: 0.5,
+        [MapProperties.VERTICALITY.MEDIUM]: 1.0,
+        [MapProperties.VERTICALITY.LOW]: 0.75,
       },
-      weight: 0.88, // ✅ Auto-balanced
+      weight: 1.0,  // Doesn’t like high ground but adapts
     },
     cover: {
       options: {
-        [MapProperties.COVER.HIGH]: 1.0, // Can use cover well in Omnic Form
-        [MapProperties.COVER.MODERATE]: 0.75, // Still viable
-        [MapProperties.COVER.MINIMAL]: 0.5, // Can be exposed but has Nemesis Form to sustain
+        [MapProperties.COVER.MINIMAL]: 0.75,
+        [MapProperties.COVER.MODERATE]: 1.0,
+        [MapProperties.COVER.HIGH]: 0.5,
       },
-      weight: 1.14, // ✅ Auto-balanced
+      weight: 1.3,  // Cover helps him poke and survive
     },
     environmentalHazards: {
       options: {
-        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0, // Prefers stable terrain to hold positions
-        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.25, // Struggles with knockbacks due to size
+        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
+        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.25,
       },
-      weight: 0.26, // ✅ Auto-balanced
+      weight: 0.2,  // Least relevant factor
     },
   },
 };
+
 
 const Sigma: Hero = {
   name: "Sigma",
