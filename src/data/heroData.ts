@@ -14,7 +14,7 @@ const DVa: Hero = {
         [MapProperties.MODE.CLASH]: 0.75,
         [MapProperties.MODE.FLASHPOINT]: 1.0,
       },
-      weight: 0.95, // ✅ Auto-balanced
+      weight: calculatePercentage(5, 7), // ✅ Auto-balanced
     },
     size: {
       options: {
@@ -22,7 +22,7 @@ const DVa: Hero = {
         [MapProperties.SIZE.MEDIUM]: 0.75,
         [MapProperties.SIZE.LARGE]: 0.25,
       },
-      weight: 1.45, // ✅ Auto-balanced
+      weight: calculatePercentage(25, 7), // ✅ Auto-balanced
     },
     layout: {
       options: {
@@ -31,7 +31,7 @@ const DVa: Hero = {
         [MapProperties.LAYOUT.OPEN]: 0.25,
         [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0,
       },
-      weight: 1.35, // ✅ Auto-balanced
+      weight: calculatePercentage(20, 7), // ✅ Auto-balanced
     },
     sightlines: {
       options: {
@@ -39,7 +39,7 @@ const DVa: Hero = {
         [MapProperties.SIGHTLINES.MEDIUM]: 0.75,
         [MapProperties.SIGHTLINES.LONG]: 0.25,
       },
-      weight: 0.93, // ✅ Auto-balanced
+      weight: calculatePercentage(15, 7), // ✅ Auto-balanced
     },
     verticality: {
       options: {
@@ -47,7 +47,7 @@ const DVa: Hero = {
         [MapProperties.VERTICALITY.MEDIUM]: 0.75,
         [MapProperties.VERTICALITY.LOW]: 0.5,
       },
-      weight: 1.1, // ✅ Auto-balanced
+      weight: calculatePercentage(20, 5), // ✅ Auto-balanced
     },
     cover: {
       options: {
@@ -55,14 +55,14 @@ const DVa: Hero = {
         [MapProperties.COVER.MODERATE]: 0.75,
         [MapProperties.COVER.MINIMAL]: 1.0,
       },
-      weight: 0.72, // ✅ Auto-balanced
+      weight: calculatePercentage(10, 7), // ✅ Auto-balanced
     },
     environmentalHazards: {
       options: {
         [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
         [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.75,
       },
-      weight: 0.35, // ✅ Auto-balanced
+      weight: calculatePercentage(5, 7), // ✅ Auto-balanced
     },
   },
 };
