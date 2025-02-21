@@ -616,132 +616,134 @@ const Mei: Hero = {
   preferredProperties: {
     mode: {
       options: {
-        [MapProperties.MODE.CONTROL]: 1.0, // Strong in tight, objective-based fights
-        [MapProperties.MODE.ESCORT]: 0.75, // Can work, but struggles on open payload phases
-        [MapProperties.MODE.HYBRID]: 1.0, // Can hold chokes well with Ice Wall
-        [MapProperties.MODE.PUSH]: 1.0, // Strong due to brawly, sustained fights
-        [MapProperties.MODE.CLASH]: 1.0, // Thrives in heavy engagements
-        [MapProperties.MODE.FLASHPOINT]: 0.75, // Decent but can struggle without structured cover
+        [MapProperties.MODE.CONTROL]: 1.0,
+        [MapProperties.MODE.ESCORT]: 0.75,
+        [MapProperties.MODE.HYBRID]: 0.875, // Average of Control & Escort
+        [MapProperties.MODE.PUSH]: 1.0,
+        [MapProperties.MODE.CLASH]: 1.0,
+        [MapProperties.MODE.FLASHPOINT]: 1.0,
       },
-      weight: 1.25, // ✅ Auto-balanced
+      weight: 1.0,  // Strong in structured, brawl-heavy game modes
     },
     size: {
       options: {
-        [MapProperties.SIZE.SMALL]: 1.0, // Best for close-range fights and controlling space
-        [MapProperties.SIZE.MEDIUM]: 1.0, // Works well with wall placement
-        [MapProperties.SIZE.LARGE]: 0.5, // Can struggle on large, open maps
+        [MapProperties.SIZE.SMALL]: 1.0,
+        [MapProperties.SIZE.MEDIUM]: 1.0,
+        [MapProperties.SIZE.LARGE]: 0.5,
       },
-      weight: 1.08, // ✅ Auto-balanced
+      weight: 1.0,  // Prefers small/medium maps for better control
     },
     layout: {
       options: {
-        [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0, // Uses walls effectively to divide enemies
-        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.75, // Can work but prefers structured fights
-        [MapProperties.LAYOUT.OPEN]: 0.5, // Struggles without cover or walls to manipulate fights
-        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0, // Can use high ground but not ideal
+        [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0,
+        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.75,
+        [MapProperties.LAYOUT.OPEN]: 0.25,
+        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 0.75,
       },
-      weight: 1.33, // ✅ Auto-balanced
+      weight: 1.4,  // Choke-heavy maps are essential for Ice Wall plays
     },
     sightlines: {
       options: {
-        [MapProperties.SIGHTLINES.SHORT]: 1.0, // Best for Mei’s close-range playstyle
-        [MapProperties.SIGHTLINES.MEDIUM]: 1.0, // Works as long as she has cover
-        [MapProperties.SIGHTLINES.LONG]: 0.5, // Less effective against long-range poke
+        [MapProperties.SIGHTLINES.SHORT]: 1.0,
+        [MapProperties.SIGHTLINES.MEDIUM]: 0.75,
+        [MapProperties.SIGHTLINES.LONG]: 0.25,
       },
-      weight: 1.0, // ✅ Auto-balanced
+      weight: 1.3,  // Short sightlines maximize her freezing effectiveness
     },
     verticality: {
       options: {
-        [MapProperties.VERTICALITY.HIGH]: 0.5, // Limited mobility for high ground access
-        [MapProperties.VERTICALITY.MEDIUM]: 1.0, // Can function well in varied elevation maps
-        [MapProperties.VERTICALITY.LOW]: 1.0, // Prefers grounded fights where she can wall off enemies
+        [MapProperties.VERTICALITY.HIGH]: 0.75,
+        [MapProperties.VERTICALITY.MEDIUM]: 1.0,
+        [MapProperties.VERTICALITY.LOW]: 1.0,
       },
-      weight: 0.83, // ✅ Auto-balanced
+      weight: 1.0,  // High ground helps, but isn’t mandatory
     },
     cover: {
       options: {
-        [MapProperties.COVER.HIGH]: 1.0, // Needs cover to approach fights safely
-        [MapProperties.COVER.MODERATE]: 0.75, // Can work but requires good positioning
-        [MapProperties.COVER.MINIMAL]: 0.5, // Struggles without natural cover
+        [MapProperties.COVER.MINIMAL]: 0.75,
+        [MapProperties.COVER.MODERATE]: 1.0,
+        [MapProperties.COVER.HIGH]: 0.75,
       },
-      weight: 1.08, // ✅ Auto-balanced
+      weight: 1.0,  // Moderate cover is ideal for safe Ice Wall plays
     },
     environmentalHazards: {
       options: {
-        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0, // Prefers stable ground for structured fights
-        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.5, // Can sometimes use walls to push enemies into hazards
+        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
+        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.75,
       },
-      weight: 0.42, // ✅ Auto-balanced
+      weight: 0.3,  // Mei can manipulate space, but doesn’t rely on hazards
     },
   },
 };
 
+
 const Bastion: Hero = {
   name: "Bastion",
   role: "Damage",
-  health: 250,
+  health: 300,
   preferredProperties: {
     mode: {
       options: {
-        [MapProperties.MODE.CONTROL]: 0.75, // Can work, but setup time may be an issue
-        [MapProperties.MODE.ESCORT]: 1.0, // Loves long sightlines and strong defensive setups
-        [MapProperties.MODE.HYBRID]: 1.0, // Can hold angles well for both attack and defense
-        [MapProperties.MODE.PUSH]: 0.75, // Decent, but can struggle with constant movement
-        [MapProperties.MODE.CLASH]: 1.0, // Can control space effectively with his firepower
-        [MapProperties.MODE.FLASHPOINT]: 0.5, // Less ideal due to fast-paced, chaotic nature
+        [MapProperties.MODE.CONTROL]: 0.75,
+        [MapProperties.MODE.ESCORT]: 1.0,
+        [MapProperties.MODE.HYBRID]: 0.875, // Average of Control & Escort
+        [MapProperties.MODE.PUSH]: 0.75,
+        [MapProperties.MODE.CLASH]: 0.75,
+        [MapProperties.MODE.FLASHPOINT]: 0.75,
       },
-      weight: 1.17, // ✅ Auto-balanced
+      weight: 0.9,  // Strong in structured, payload-based game modes
     },
     size: {
       options: {
-        [MapProperties.SIZE.SMALL]: 0.5, // Can struggle with limited space to reposition
-        [MapProperties.SIZE.MEDIUM]: 1.0, // Ideal for balancing cover and firing angles
-        [MapProperties.SIZE.LARGE]: 1.0, // Works well due to long-range opportunities
+        [MapProperties.SIZE.SMALL]: 0.25,
+        [MapProperties.SIZE.MEDIUM]: 1.0,
+        [MapProperties.SIZE.LARGE]: 1.0,
       },
-      weight: 1.09, // ✅ Auto-balanced
+      weight: 1.0,  // Prefers medium/large maps to maintain range
     },
     layout: {
       options: {
-        [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0, // Can hold chokes well with turret fire
-        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.5, // Struggles against flank-heavy maps
-        [MapProperties.LAYOUT.OPEN]: 1.0, // Thrives with good sightlines
-        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0, // Loves high ground to maximize effectiveness
+        [MapProperties.LAYOUT.CHOKE_HEAVY]: 0.75,
+        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 0.25,
+        [MapProperties.LAYOUT.OPEN]: 1.0,
+        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0,
       },
-      weight: 1.24, // ✅ Auto-balanced
+      weight: 1.3,  // Open & high-ground-heavy maps are essential
     },
     sightlines: {
       options: {
-        [MapProperties.SIGHTLINES.SHORT]: 0.5, // Less effective at close range
-        [MapProperties.SIGHTLINES.MEDIUM]: 1.0, // Ideal for consistent damage output
-        [MapProperties.SIGHTLINES.LONG]: 1.0, // Works well for suppressive fire and poke damage
+        [MapProperties.SIGHTLINES.SHORT]: 0.25,
+        [MapProperties.SIGHTLINES.MEDIUM]: 0.75,
+        [MapProperties.SIGHTLINES.LONG]: 1.0,
       },
-      weight: 1.24, // ✅ Auto-balanced
+      weight: 1.4,  // Long-range fights are essential for Bastion
     },
     verticality: {
       options: {
-        [MapProperties.VERTICALITY.HIGH]: 1.0, // Can use high ground well but lacks mobility
-        [MapProperties.VERTICALITY.MEDIUM]: 1.0, // Can still function effectively with good positioning
-        [MapProperties.VERTICALITY.LOW]: 0.5, // Struggles if forced into purely grounded fights
+        [MapProperties.VERTICALITY.HIGH]: 1.0,
+        [MapProperties.VERTICALITY.MEDIUM]: 1.0,
+        [MapProperties.VERTICALITY.LOW]: 0.75,
       },
-      weight: 0.93, // ✅ Auto-balanced
+      weight: 1.0,  // High ground helps, but isn’t mandatory
     },
     cover: {
       options: {
-        [MapProperties.COVER.HIGH]: 1.0, // Needs cover to safely reposition and reload
-        [MapProperties.COVER.MODERATE]: 0.75, // Can still work but requires awareness
-        [MapProperties.COVER.MINIMAL]: 0.5, // Struggles if left exposed for too long
+        [MapProperties.COVER.MINIMAL]: 0.25,
+        [MapProperties.COVER.MODERATE]: 1.0,
+        [MapProperties.COVER.HIGH]: 0.75,
       },
-      weight: 1.01, // ✅ Auto-balanced
+      weight: 1.0,  // Moderate cover is ideal for protecting Bastion
     },
     environmentalHazards: {
       options: {
-        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0, // Prefers stable ground to control fights
-        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.5, // Can use artillery to force movement into hazards
+        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
+        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.25,
       },
-      weight: 0.31, // ✅ Auto-balanced
+      weight: 0.4,  // Boops are a problem, but not frequent enough to be a huge issue
     },
   },
 };
+
 
 const Cassidy: Hero = {
   name: "Cassidy",
@@ -750,65 +752,66 @@ const Cassidy: Hero = {
   preferredProperties: {
     mode: {
       options: {
-        [MapProperties.MODE.CONTROL]: 1.0, // Thrives in objective-based fights with solid angles
-        [MapProperties.MODE.ESCORT]: 1.0, // Can take advantage of payload cover and long sightlines
-        [MapProperties.MODE.HYBRID]: 1.0, // Can control space effectively on both attack and defense
-        [MapProperties.MODE.PUSH]: 0.75, // Can work but struggles against high-mobility compositions
-        [MapProperties.MODE.CLASH]: 1.0, // Can hold ground effectively in structured fights
-        [MapProperties.MODE.FLASHPOINT]: 0.5, // Less ideal due to chaotic nature and constant movement
+        [MapProperties.MODE.CONTROL]: 1.0,
+        [MapProperties.MODE.ESCORT]: 0.75,
+        [MapProperties.MODE.HYBRID]: 0.875, // Average of Control & Escort
+        [MapProperties.MODE.PUSH]: 1.0,
+        [MapProperties.MODE.CLASH]: 1.0,
+        [MapProperties.MODE.FLASHPOINT]: 1.0,
       },
-      weight: 1.11, // ✅ Auto-balanced
+      weight: 0.9,  // Performs well in structured game modes
     },
     size: {
       options: {
-        [MapProperties.SIZE.SMALL]: 0.5, // Can struggle in extremely tight spaces
-        [MapProperties.SIZE.MEDIUM]: 1.0, // Best for structured mid-range fights
-        [MapProperties.SIZE.LARGE]: 1.0, // Can work well if he has good cover to play around
+        [MapProperties.SIZE.SMALL]: 0.75,
+        [MapProperties.SIZE.MEDIUM]: 1.0,
+        [MapProperties.SIZE.LARGE]: 0.75,
       },
-      weight: 1.03, // ✅ Auto-balanced
+      weight: 1.0,  // Medium maps give him the best engagement range
     },
     layout: {
       options: {
-        [MapProperties.LAYOUT.CHOKE_HEAVY]: 1.0, // Can control chokes well with accurate mid-range shots
-        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 1.0, // Can hold angles but must be aware of dive threats
-        [MapProperties.LAYOUT.OPEN]: 0.75, // Can work but is vulnerable to snipers and dive
-        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0, // Loves high ground for better sightlines
+        [MapProperties.LAYOUT.CHOKE_HEAVY]: 0.75,
+        [MapProperties.LAYOUT.FLANK_FRIENDLY]: 1.0,
+        [MapProperties.LAYOUT.OPEN]: 0.75,
+        [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 0.75,
       },
-      weight: 1.19, // ✅ Auto-balanced
+      weight: 1.2,  // Flank-friendly maps give him better positioning options
     },
     sightlines: {
       options: {
-        [MapProperties.SIGHTLINES.SHORT]: 0.5, // Struggles in pure close-range fights without cover
-        [MapProperties.SIGHTLINES.MEDIUM]: 1.0, // Ideal range for landing consistent damage
-        [MapProperties.SIGHTLINES.LONG]: 1.0, // Can function but is outclassed by snipers at extreme range
+        [MapProperties.SIGHTLINES.SHORT]: 0.75,
+        [MapProperties.SIGHTLINES.MEDIUM]: 1.0,
+        [MapProperties.SIGHTLINES.LONG]: 0.75,
       },
-      weight: 1.27, // ✅ Auto-balanced
+      weight: 1.3,  // Medium-range fights are his strongest point
     },
     verticality: {
       options: {
-        [MapProperties.VERTICALITY.HIGH]: 0.75, // Can be strong if he gets high ground but lacks mobility
-        [MapProperties.VERTICALITY.MEDIUM]: 1.0, // Can play effectively with moderate elevation shifts
-        [MapProperties.VERTICALITY.LOW]: 1.0, // Prefers grounded fights where he can control engagements
+        [MapProperties.VERTICALITY.HIGH]: 0.75,
+        [MapProperties.VERTICALITY.MEDIUM]: 1.0,
+        [MapProperties.VERTICALITY.LOW]: 1.0,
       },
-      weight: 0.95, // ✅ Auto-balanced
+      weight: 1.0,  // High ground helps, but isn’t mandatory
     },
     cover: {
       options: {
-        [MapProperties.COVER.HIGH]: 1.0, // Needs cover to peek and engage safely
-        [MapProperties.COVER.MODERATE]: 0.75, // Can still work but makes him more vulnerable
-        [MapProperties.COVER.MINIMAL]: 0.5, // Struggles if left exposed for too long
+        [MapProperties.COVER.MINIMAL]: 0.5,
+        [MapProperties.COVER.MODERATE]: 1.0,
+        [MapProperties.COVER.HIGH]: 0.75,
       },
-      weight: 1.03, // ✅ Auto-balanced
+      weight: 1.0,  // Moderate cover lets him fight effectively without getting poked out
     },
     environmentalHazards: {
       options: {
-        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0, // Prefers structured fights over environmental play
-        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.5, // Can sometimes use grenade to displace enemies
+        [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
+        [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.5,
       },
-      weight: 0.4, // ✅ Auto-balanced
+      weight: 0.6,  // Boops can be annoying, but not a dealbreaker
     },
   },
 };
+
 
 const Echo: Hero = {
   name: "Echo",
