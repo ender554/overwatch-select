@@ -78,10 +78,10 @@ const Doomfist: Hero = {
         [MapProperties.MODE.ESCORT]: 0.5,
         [MapProperties.MODE.HYBRID]: 0.75, // Average of Control & Escort
         [MapProperties.MODE.PUSH]: 0.75,
-        [MapProperties.MODE.CLASH]: 0.75,
-        [MapProperties.MODE.FLASHPOINT]: 1.0,
+        [MapProperties.MODE.CLASH]: 1.0,
+        [MapProperties.MODE.FLASHPOINT]: 0.75,
       },
-      weight: 0.9,  // Low-moderate importance
+      weight: calculatePercentage(5, 7),  // Low-moderate importance
     },
     size: {
       options: {
@@ -89,7 +89,7 @@ const Doomfist: Hero = {
         [MapProperties.SIZE.MEDIUM]: 0.75,
         [MapProperties.SIZE.LARGE]: 0.25,
       },
-      weight: 1.4,  // Very important
+      weight: calculatePercentage(25, 7),  // Very important
     },
     layout: {
       options: {
@@ -98,7 +98,7 @@ const Doomfist: Hero = {
         [MapProperties.LAYOUT.OPEN]: 0.25,
         [MapProperties.LAYOUT.HIGH_GROUND_FOCUSED]: 1.0,
       },
-      weight: 1.3,  // Essential for his playstyle
+      weight: calculatePercentage(25, 7),  // Essential for his playstyle
     },
     sightlines: {
       options: {
@@ -106,7 +106,7 @@ const Doomfist: Hero = {
         [MapProperties.SIGHTLINES.MEDIUM]: 0.75,
         [MapProperties.SIGHTLINES.LONG]: 0.25,
       },
-      weight: 1.2,  // Important for avoiding poke
+      weight: calculatePercentage(20, 7),  // Important for avoiding poke
     },
     verticality: {
       options: {
@@ -114,7 +114,7 @@ const Doomfist: Hero = {
         [MapProperties.VERTICALITY.MEDIUM]: 0.75,
         [MapProperties.VERTICALITY.LOW]: 0.25,
       },
-      weight: 1.2,  // High importance
+      weight: calculatePercentage(15, 7),  // High importance
     },
     cover: {
       options: {
@@ -122,14 +122,14 @@ const Doomfist: Hero = {
         [MapProperties.COVER.MODERATE]: 1.0,
         [MapProperties.COVER.HIGH]: 0.25,
       },
-      weight: 1.0,  // Decent importance
+      weight: calculatePercentage(5, 7),  // Decent importance
     },
     environmentalHazards: {
       options: {
         [MapProperties.ENVIRONMENTAL_HAZARDS.NONE]: 1.0,
         [MapProperties.ENVIRONMENTAL_HAZARDS.BOOP_POTENTIAL]: 0.75,
       },
-      weight: 0.4,  // Least important
+      weight: calculatePercentage(5, 7),  // Least important
     },
   },
 };
